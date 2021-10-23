@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "dndmi:items/mace_of_the_mule"
+  }
+}
