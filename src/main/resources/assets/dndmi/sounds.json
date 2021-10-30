@@ -1,0 +1,12 @@
+{
+  "mace_of_the_mule_sound": {
+    "category": "item",
+    "subtitle": "mace_of_the_mule_sound.sub",
+    "sounds": [
+      {
+        "name": "dndmi:item/mace_of_the_mule_sound",
+        "stream": true
+      }
+    ]
+  }
+}
