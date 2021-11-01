@@ -11,13 +11,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
+import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = MagicItems.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class MaceOfTheMuleEvents {
 
-    //static int charge = 4;
+    public static int charge = 12;
 
     @SubscribeEvent
     public static void maceOfTheMuleChargeHit(AttackEntityEvent player) {
@@ -25,7 +26,7 @@ public class MaceOfTheMuleEvents {
         if (player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && player.getEntityLiving().isCrouching()) {
             player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).enchant(Enchantments.KNOCKBACK, 10);
             playerIn.playSound(SoundInit.MACE_OF_THE_MULE_SOUND.get(), 1.0f, 1.0f);
-            //charge--;
+            charge--;
         }
         else if (player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && !player.getEntityLiving().isCrouching()) {
             player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).removeTagKey("Enchantments");
@@ -33,17 +34,9 @@ public class MaceOfTheMuleEvents {
     }
 
     @SubscribeEvent
-    public static void sleepRecharge(PlayerSleepInBedEvent player) {
-        if (player.getEntityLiving().isSleeping()) {
-            //charge = 4;
+    public static void sleepRecharge(PlayerWakeUpEvent player) {
+        if (player.wakeImmediately()) {
+            charge = 12;
         }
     }
-
-    public static void chargeHitSound(PlayerInteractEvent.RightClickItem event) {
-        LivingEntity player = event.getEntityLiving();
-        if (player.getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && player.isCrouching()) {
-
-        }
-    }
-
 }

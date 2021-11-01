@@ -1,8 +1,6 @@
 package com.kingpins.magicitems;
 
-import com.kingpins.magicitems.core.init.BlockInit;
-import com.kingpins.magicitems.core.init.ItemInit;
-import com.kingpins.magicitems.core.init.SoundInit;
+import com.kingpins.magicitems.core.init.*;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +24,8 @@ public class MagicItems {
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
         SoundInit.SOUNDS.register(bus);
+        EntityTypeInit.ENTITIES.register(bus);
+        TileEntityTypeInit.TILE_ENTITIES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
