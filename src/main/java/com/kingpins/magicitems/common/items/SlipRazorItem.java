@@ -13,7 +13,8 @@ public class SlipRazorItem extends Item {
         super(p_i48487_1_);
     }
 
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+    @Override
+    public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getItemInHand(Hand.MAIN_HAND);
 
         if(!worldIn.isClientSide) {
