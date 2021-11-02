@@ -63,13 +63,6 @@ public class SlipRazorEntity extends ProjectileItemEntity {
                 if (serverplayerentity.connection.getConnection().isConnected() && serverplayerentity.level == this.level && !serverplayerentity.isSleeping()) {
                     SlipRazorEvents event = (SlipRazorEvents) SlipRazorEvents.onSlipRazorLand(serverplayerentity, this.getX(), this.getY(), this.getZ(), this, 5.0F);
                     if (!event.isCanceled()) { // Don't indent to lower patch size
-                        if (this.random.nextFloat() < 0.05F && this.level.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
-                            EndermiteEntity endermiteentity = EntityType.ENDERMITE.create(this.level);
-                            endermiteentity.setPlayerSpawned(true);
-                            endermiteentity.moveTo(entity.getX(), entity.getY(), entity.getZ(), entity.yRot, entity.xRot);
-                            this.level.addFreshEntity(endermiteentity);
-                        }
-
                         if (entity.isPassenger()) {
                             entity.stopRiding();
                         }
