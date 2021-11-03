@@ -2,6 +2,7 @@ package com.kingpins.magicitems.core.init;
 
 import com.kingpins.magicitems.MagicItems;
 import com.kingpins.magicitems.common.blocks.ChimeOfBeastDiscoveryBlock;
+import com.kingpins.magicitems.common.blocks.ShieldOfTheTowerBlock;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,5 +19,8 @@ public class BlockInit {
     public static final RegistryObject<Block> CHIME_OF_BEAST_DISCOVERY = BLOCKS.register("chime_of_beast_discovery",
             ChimeOfBeastDiscoveryBlock::new);
 
+    //=====SHIELD OF THE TOWER BLOCK
+    public static final RegistryObject<Block> SHIELD_OF_THE_TOWER_BLOCK = BLOCKS.register("shield_of_the_tower_block",
+            ShieldOfTheTowerBlock::new);
 
 }
