@@ -1,4 +1,4 @@
-package com.kingpins.magicitems.client.render.tileentity;
+package com.kingpins.magicitems.common.tileentities;
 
 import com.kingpins.magicitems.core.init.TileEntityTypeInit;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -8,8 +8,8 @@ import net.minecraft.util.math.vector.Vector3i;
 
 public class ChimeOBDTileEntity extends TileEntity implements ITickableTileEntity {
 
-    public ChimeOBDTileEntity(TileEntityType<?> p_i48289_1_) {
-        super(p_i48289_1_);
+    public ChimeOBDTileEntity(TileEntityType<?> tileEntityTypeIn) {
+        super(tileEntityTypeIn);
     }
 
     public ChimeOBDTileEntity() {
@@ -18,6 +18,6 @@ public class ChimeOBDTileEntity extends TileEntity implements ITickableTileEntit
 
     @Override
     public void tick() {
-        this.worldPosition.distSqr(Vector3i.ZERO);
+
     }
 }

@@ -1,6 +1,7 @@
 package com.kingpins.magicitems.core.init;
 
 import com.kingpins.magicitems.MagicItems;
+import com.kingpins.magicitems.common.items.CombatBandageItem;
 import com.kingpins.magicitems.common.items.MaceOfTheMuleItem;
 import com.kingpins.magicitems.common.items.ShieldOfTheTowerItem;
 import com.kingpins.magicitems.common.items.SlipRazorItem;
@@ -27,5 +28,7 @@ public class ItemInit {
     public static final RegistryObject<Item> SHIELD_OF_THE_TOWER = ITEMS.register("shield_of_the_tower",
             () -> new ShieldOfTheTowerItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
 
-
+    // =====CONSUMABLES=====
+    public static final RegistryObject<Item> COMBAT_BANDAGE = ITEMS.register("combat_bandage",
+            () -> new CombatBandageItem(new Item.Properties().tab(ItemGroup.TAB_FOOD)));
 }

@@ -58,6 +58,7 @@ public class SlipRazorEntity extends ProjectileItemEntity {
         super.onHitEntity(entityRayTraceResult);
         Entity player = this.getOwner();
         Entity mobEntity = entityRayTraceResult.getEntity();
+        World worldIn = mobEntity.level;
 
         for (int i = 0; i < 32; ++i) {
             this.level.addParticle(ParticleTypes.FLASH, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
@@ -74,6 +75,7 @@ public class SlipRazorEntity extends ProjectileItemEntity {
                         }
 
                         player.teleportTo(event.getTargetX(), event.getTargetY(), event.getTargetZ());
+                        worldIn.playSound((PlayerEntity)null, player.getX(), player.getY(), player.getZ(), SoundInit.TELEPORT_SOUND.get(), SoundCategory.NEUTRAL, 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
                         mobEntity.hurt(DamageSource.thrown(this, this.getOwner()), 4.0F);
                     } //Forge: End
                 }
