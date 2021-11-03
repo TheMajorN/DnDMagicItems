@@ -1,6 +1,7 @@
 package com.kingpins.magicitems.core.init;
 
 import com.kingpins.magicitems.MagicItems;
+import com.kingpins.magicitems.common.items.MaceOfTheMuleItem;
 import com.kingpins.magicitems.common.items.ShieldOfTheTowerItem;
 import com.kingpins.magicitems.common.items.SlipRazorItem;
 import net.minecraft.item.BlockItem;
@@ -16,8 +17,8 @@ public class ItemInit {
             MagicItems.MOD_ID);
 
     // =====WEAPONS=====
-    public static final RegistryObject<BlockItem> MACE_OF_THE_MULE = ITEMS.register("mace_of_the_mule",
-            () -> new BlockItem(BlockInit.MACE_OF_THE_MULE.get(), new Item.Properties().tab(ItemGroup.TAB_TOOLS)));
+    public static final RegistryObject<Item> MACE_OF_THE_MULE = ITEMS.register("mace_of_the_mule",
+            () -> new MaceOfTheMuleItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
 
     public static final RegistryObject<Item> SLIP_RAZOR = ITEMS.register("slip_razor",
             () -> new SlipRazorItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));

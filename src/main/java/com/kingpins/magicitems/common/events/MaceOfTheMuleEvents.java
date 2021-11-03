@@ -23,7 +23,7 @@ public class MaceOfTheMuleEvents {
     @SubscribeEvent
     public static void maceOfTheMuleChargeHit(AttackEntityEvent player) {
         LivingEntity playerIn = player.getEntityLiving();
-        if (player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && player.getEntityLiving().isCrouching()) {
+        if (player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && player.getEntityLiving().isCrouching() && charge > 0) {
             player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).enchant(Enchantments.KNOCKBACK, 10);
             playerIn.playSound(SoundInit.MACE_OF_THE_MULE_SOUND.get(), 1.0f, 1.0f);
             charge--;

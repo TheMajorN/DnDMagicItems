@@ -16,4 +16,8 @@ public class SoundInit {
     public static final RegistryObject<SoundEvent> MACE_OF_THE_MULE_SOUND = SOUNDS.register
             ("mace_of_the_mule_sound", () -> new SoundEvent(new ResourceLocation(MagicItems.MOD_ID, "mace_of_the_mule_sound")));
 
+    //=====SLIP RAZOR=====
+    public static final RegistryObject<SoundEvent> TELEPORT_SOUND = SOUNDS.register
+            ("teleport_sound", () -> new SoundEvent(new ResourceLocation(MagicItems.MOD_ID, "teleport_sound")));
+
 }

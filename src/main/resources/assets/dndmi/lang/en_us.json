@@ -4,5 +4,7 @@
   "item.dndmi.slip_razor": "Slip Razor",
 
   "mace_of_the_mule_sound": "Mace of the Mule Charged Hit",
-  "mace_of_the_mule_sound.sub": "Mace of the Mule Charged Hit"
+  "mace_of_the_mule_sound.sub": "Mace of the Mule Charged Hit",
+  "teleport_sound": "Slip Razor Teleport",
+  "teleport_sound.sub": "Slip Razor Teleport"
 }

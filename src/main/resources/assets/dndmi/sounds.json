@@ -8,5 +8,16 @@
         "stream": true
       }
     ]
+  },
+
+  "teleport_sound": {
+    "category": "item",
+    "subtitle": "teleport_sound.sub",
+    "sounds": [
+      {
+        "name": "dndmi:item/teleport_sound",
+        "stream": true
+      }
+    ]
   }
 }
