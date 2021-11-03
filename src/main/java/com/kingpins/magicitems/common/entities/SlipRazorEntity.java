@@ -47,14 +47,46 @@ public class SlipRazorEntity extends ProjectileItemEntity {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 
-
     @Override
-    protected void onHit(RayTraceResult p_70227_1_) {
-        super.onHit(p_70227_1_);
+    protected void onHitEntity(EntityRayTraceResult entityRayTraceResult) {
+        super.onHitEntity(entityRayTraceResult);
         Entity entity = this.getOwner();
 
         for (int i = 0; i < 32; ++i) {
-            this.level.addParticle(ParticleTypes.ENCHANT, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
+            this.level.addParticle(ParticleTypes.FLASH, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
+        }
+
+        if (!this.level.isClientSide && !this.removed) {
+            if (entity instanceof ServerPlayerEntity) {
+                ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) entity;
+                if (serverplayerentity.connection.getConnection().isConnected() && serverplayerentity.level == this.level && !serverplayerentity.isSleeping()) {
+                    SlipRazorEvents event = (SlipRazorEvents) SlipRazorEvents.onSlipRazorLand(serverplayerentity, this.getX(), this.getY(), this.getZ(), this, 6.0F);
+                    if (!event.isCanceled()) { // Don't indent to lower patch size
+                        if (entity.isPassenger()) {
+                            entity.stopRiding();
+                        }
+
+                        entity.teleportTo(event.getTargetX(), event.getTargetY(), event.getTargetZ());
+                        entity.fallDistance = 0.0F;
+                        //entity.hurt(DamageSource.FALL, event.getAttackDamage());
+                    } //Forge: End
+                }
+            } else if (entity != null) {
+                entity.teleportTo(this.getX(), this.getY(), this.getZ());
+                entity.fallDistance = 0.0F;
+            }
+
+            this.remove();
+        }
+    }
+
+    @Override
+    protected void onHit(RayTraceResult rayTraceResult) {
+        super.onHit(rayTraceResult);
+        Entity entity = this.getOwner();
+
+        for (int i = 0; i < 32; ++i) {
+            this.level.addParticle(ParticleTypes.FLASH, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
         }
 
         if (!this.level.isClientSide && !this.removed) {

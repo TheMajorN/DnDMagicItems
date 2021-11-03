@@ -18,4 +18,6 @@ public class BlockInit {
 
     public static final RegistryObject<Block> CHIME_OF_BEAST_DISCOVERY = BLOCKS.register("chime_of_beast_discovery",
             ChimeOfBeastDiscoveryBlock::new);
+
+
 }
