@@ -51,6 +51,7 @@ public class SlipRazorEntity extends ProjectileItemEntity {
     protected void onHitEntity(EntityRayTraceResult entityRayTraceResult) {
         super.onHitEntity(entityRayTraceResult);
         Entity entity = this.getOwner();
+        Entity mobEntity = entityRayTraceResult.getEntity();
 
         for (int i = 0; i < 32; ++i) {
             this.level.addParticle(ParticleTypes.FLASH, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
@@ -68,6 +69,7 @@ public class SlipRazorEntity extends ProjectileItemEntity {
 
                         entity.teleportTo(event.getTargetX(), event.getTargetY(), event.getTargetZ());
                         entity.fallDistance = 0.0F;
+                        mobEntity.hurt(DamageSource.thrown(this, this.getOwner()), 6.0F);
                         //entity.hurt(DamageSource.FALL, event.getAttackDamage());
                     } //Forge: End
                 }
@@ -101,7 +103,6 @@ public class SlipRazorEntity extends ProjectileItemEntity {
 
                         entity.teleportTo(event.getTargetX(), event.getTargetY(), event.getTargetZ());
                         entity.fallDistance = 0.0F;
-                        //entity.hurt(DamageSource.FALL, event.getAttackDamage());
                     } //Forge: End
                 }
             } else if (entity != null) {
