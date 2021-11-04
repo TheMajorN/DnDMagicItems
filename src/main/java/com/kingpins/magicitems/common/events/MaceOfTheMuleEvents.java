@@ -28,7 +28,7 @@ public class MaceOfTheMuleEvents {
             playerIn.playSound(SoundInit.MACE_OF_THE_MULE_SOUND.get(), 1.0f, 1.0f);
             charge--;
         }
-        else if (player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && !player.getEntityLiving().isCrouching()) {
+        else if (player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).getItem() == ItemInit.MACE_OF_THE_MULE.get() && !player.getEntityLiving().isCrouching() && charge > 0) {
             player.getEntityLiving().getItemInHand(Hand.MAIN_HAND).removeTagKey("Enchantments");
         }
     }

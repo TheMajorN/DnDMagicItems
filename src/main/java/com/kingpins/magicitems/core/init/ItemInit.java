@@ -1,10 +1,7 @@
 package com.kingpins.magicitems.core.init;
 
 import com.kingpins.magicitems.MagicItems;
-import com.kingpins.magicitems.common.items.CombatBandageItem;
-import com.kingpins.magicitems.common.items.MaceOfTheMuleItem;
-import com.kingpins.magicitems.common.items.ShieldOfTheTowerItem;
-import com.kingpins.magicitems.common.items.SlipRazorItem;
+import com.kingpins.magicitems.common.items.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -23,6 +20,9 @@ public class ItemInit {
 
     public static final RegistryObject<Item> SLIP_RAZOR = ITEMS.register("slip_razor",
             () -> new SlipRazorItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> EXPLORERS_CUTLASS = ITEMS.register("explorers_cutlass",
+            () -> new ExplorersCutlassItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
 
     // =====SHIELDS=====
     public static final RegistryObject<Item> SHIELD_OF_THE_TOWER = ITEMS.register("shield_of_the_tower",

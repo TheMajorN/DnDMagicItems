@@ -13,6 +13,7 @@ public class EntityTypeInit {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES,
             MagicItems.MOD_ID);
 
+    //=====THROWABLE ITEMS=====
     public static final RegistryObject<EntityType<SlipRazorEntity>> SLIP_RAZOR_ENTITY = ENTITIES.register("slip_razor",
             () -> EntityType.Builder.<SlipRazorEntity>of(SlipRazorEntity::new, EntityClassification.MISC)
                     .sized(0.25F, 0.25F).build("slip_razor"));
