@@ -29,10 +29,10 @@ public class ExplorersCutlassItem extends ShearsItem {
     @Override
     public boolean isCorrectToolForDrops(BlockState state) {
         return state.is(Blocks.CACTUS)
-                || !state.is(BlockTags.LEAVES)
-                || !state.is(BlockTags.FLOWERS)
-                || !state.is(BlockTags.CRIMSON_STEMS)
-                || !state.is(BlockTags.WARPED_STEMS)
-                || !state.is(BlockTags.BAMBOO_PLANTABLE_ON);
+                || state.is(BlockTags.LEAVES)
+                || state.is(BlockTags.FLOWERS)
+                || state.is(BlockTags.CRIMSON_STEMS)
+                || state.is(BlockTags.WARPED_STEMS)
+                || state.is(BlockTags.BAMBOO_PLANTABLE_ON);
     }
 }
