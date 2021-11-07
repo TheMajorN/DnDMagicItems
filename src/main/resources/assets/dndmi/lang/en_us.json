@@ -1,8 +1,11 @@
 {
   "item.dndmi.mace_of_the_mule": "Mace of the Mule",
-  "block.dndmi.mace_of_the_mule": "Mace of the Mule",
   "item.dndmi.slip_razor": "Slip Razor",
   "item.dndmi.explorers_cutlass": "Explorer's Cutlass",
+  "item.dndmi.combat_bandage": "Combat Bandage",
+  "item.dndmi.shield_of_the_tower": "Shield of the Tower",
+
+  "block.dndmi.shield_wall": "Shield Wall Block",
 
   "mace_of_the_mule_sound": "Mace of the Mule Charged Hit",
   "mace_of_the_mule_sound.sub": "Mace of the Mule Charged Hit",
