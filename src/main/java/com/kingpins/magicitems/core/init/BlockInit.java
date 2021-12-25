@@ -3,7 +3,11 @@ package com.kingpins.magicitems.core.init;
 import com.kingpins.magicitems.MagicItems;
 import com.kingpins.magicitems.common.blocks.ChimeOfBeastDiscoveryBlock;
 import com.kingpins.magicitems.common.blocks.ShieldWallBlock;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,7 +24,8 @@ public class BlockInit {
             ChimeOfBeastDiscoveryBlock::new);
 
     //=====SHIELD OF THE TOWER BLOCK
-    public static final RegistryObject<Block> SHIELD_OF_THE_TOWER_BLOCK = BLOCKS.register("shield_wall",
-            ShieldWallBlock::new);
+    public static final RegistryObject<Block> SHIELD_WALL_BLOCK = BLOCKS.register("shield_wall",
+            () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN)
+                    .sound(SoundType.WOOD).strength(3.0F, 15F)));
 
 }

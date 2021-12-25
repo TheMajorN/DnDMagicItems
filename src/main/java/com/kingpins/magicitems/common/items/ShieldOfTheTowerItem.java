@@ -4,9 +4,7 @@ import com.kingpins.magicitems.core.init.BlockInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
-import net.minecraft.item.ShieldItem;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -25,19 +23,19 @@ public class ShieldOfTheTowerItem extends Item {
         BlockState state = level.getBlockState(pos);
 
         if (!state.isAir()) {
-            level.setBlockAndUpdate(pos,
-                    BlockInit.SHIELD_OF_THE_TOWER_BLOCK.get().defaultBlockState());
+            level.setBlock(pos,
+                    BlockInit.SHIELD_WALL_BLOCK.get().defaultBlockState(), 1);
             for (int i = 0 ; i < 6 ; i++) {
-                level.setBlockAndUpdate(pos.east(i),
-                        BlockInit.SHIELD_OF_THE_TOWER_BLOCK.get().defaultBlockState());
+                level.setBlock(pos.east(i),
+                        BlockInit.SHIELD_WALL_BLOCK.get().defaultBlockState(), 1);
             }
             for (int i = 0 ; i < 6 ; i++) {
-                level.setBlockAndUpdate(pos.west(i),
-                        BlockInit.SHIELD_OF_THE_TOWER_BLOCK.get().defaultBlockState());
+                level.setBlock(pos.west(i),
+                        BlockInit.SHIELD_WALL_BLOCK.get().defaultBlockState(), 1);
             }
             for (int i = 0 ; i < 6 ; i++) {
-                level.setBlockAndUpdate(pos.above(i),
-                        BlockInit.SHIELD_OF_THE_TOWER_BLOCK.get().defaultBlockState());
+                level.setBlock(pos.above(i),
+                        BlockInit.SHIELD_WALL_BLOCK.get().defaultBlockState(), 1);
             }
         }
         return ActionResultType.SUCCESS;

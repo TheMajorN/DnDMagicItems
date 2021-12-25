@@ -17,5 +17,5 @@ public class TileEntityTypeInit {
             () -> TileEntityType.Builder.of(ChimeOBDTileEntity::new, BlockInit.CHIME_OF_BEAST_DISCOVERY.get()).build(null));
 
     public static final RegistryObject<TileEntityType<ShieldOTTTileEntity>> SHIELD_OTT_TILE_ENTITY_TYPE = TILE_ENTITIES.register("shield_of_the_tower",
-            () -> TileEntityType.Builder.of(ShieldOTTTileEntity::new, BlockInit.SHIELD_OF_THE_TOWER_BLOCK.get()).build(null));
+            () -> TileEntityType.Builder.of(ShieldOTTTileEntity::new, BlockInit.SHIELD_WALL_BLOCK.get()).build(null));
 }

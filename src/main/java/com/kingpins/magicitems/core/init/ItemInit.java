@@ -36,4 +36,11 @@ public class ItemInit {
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).food(new Food.Builder()
             .effect(() -> new EffectInstance(Effects.HEAL, 100, 2), 1.0F)
             .fast().build())));
+
+    // =====Block Items=====
+    public static final RegistryObject<BlockItem> SHIELD_WALL_ITEM = ITEMS.register("shield_wall",
+            () -> new BlockItem(BlockInit.SHIELD_WALL_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> CHIME_OBD_ITEM = ITEMS.register("chime_of_beast_discovery",
+            () -> new BlockItem(BlockInit.CHIME_OF_BEAST_DISCOVERY.get(), new Item.Properties().tab(ItemGroup.TAB_TOOLS)));
 }
