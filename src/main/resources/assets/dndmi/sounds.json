@@ -1,6 +1,5 @@
 {
   "mace_of_the_mule_sound": {
-    "category": "item",
     "subtitle": "mace_of_the_mule_sound.sub",
     "sounds": [
       {
@@ -11,11 +10,20 @@
   },
 
   "teleport_sound": {
-    "category": "item",
     "subtitle": "teleport_sound.sub",
     "sounds": [
       {
         "name": "dndmi:item/teleport_sound",
+        "stream": true
+      }
+    ]
+  },
+
+  "chime_obd_sound": {
+    "subtitle": "chime_obd_sound.sub",
+    "sounds": [
+      {
+        "name": "dndmi:item/chime_obd_sound",
         "stream": true
       }
     ]

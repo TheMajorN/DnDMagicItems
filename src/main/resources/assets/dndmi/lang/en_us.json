@@ -12,5 +12,7 @@
   "mace_of_the_mule_sound": "Mace of the Mule Charged Hit",
   "mace_of_the_mule_sound.sub": "Mace of the Mule Charged Hit",
   "teleport_sound": "Slip Razor Teleport",
-  "teleport_sound.sub": "Slip Razor Teleport"
+  "teleport_sound.sub": "Slip Razor Teleport",
+  "chime_obd_sound": "Chime of Beast Discovery Alert",
+  "chime_obd_sound.sub": "Chime of Beast Discovery Alert Ring"
 }

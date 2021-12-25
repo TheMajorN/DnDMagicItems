@@ -20,4 +20,7 @@ public class SoundInit {
     public static final RegistryObject<SoundEvent> TELEPORT_SOUND = SOUNDS.register
             ("teleport_sound", () -> new SoundEvent(new ResourceLocation(MagicItems.MOD_ID, "teleport_sound")));
 
+    //=====CHIME OF BEAST DISCOVERY=====
+    public static final RegistryObject<SoundEvent> CHIME_OBD_SOUND = SOUNDS.register
+            ("chime_obd_sound", () -> new SoundEvent(new ResourceLocation(MagicItems.MOD_ID, "chime_obd_sound")));
 }
