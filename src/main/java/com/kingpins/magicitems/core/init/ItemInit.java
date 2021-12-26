@@ -2,10 +2,8 @@ package com.kingpins.magicitems.core.init;
 
 import com.kingpins.magicitems.MagicItems;
 import com.kingpins.magicitems.common.items.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import com.kingpins.magicitems.core.enums.ModItemTier;
+import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
@@ -26,6 +24,12 @@ public class ItemInit {
 
     public static final RegistryObject<Item> EXPLORERS_CUTLASS = ITEMS.register("explorers_cutlass",
             () -> new ExplorersCutlassItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> GOLDEN_HIND = ITEMS.register("golden_hind",
+            () -> new GoldenHindItem(new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
+
+    //=====ITEMS=====
+
 
     // =====SHIELDS=====
     public static final RegistryObject<Item> SHIELD_OF_THE_TOWER = ITEMS.register("shield_of_the_tower",

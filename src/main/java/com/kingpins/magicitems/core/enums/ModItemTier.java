@@ -6,7 +6,7 @@ import net.minecraft.item.crafting.Ingredient;
 
 public enum ModItemTier implements IItemTier {
 
-    MACE_OF_THE_MULE(0, 2000, 0.0F, 6.0F, 0, Ingredient.of(ItemInit.MACE_OF_THE_MULE.get()));
+    GOLDEN_HIND(0, 2000, 0.0F, 5.5F, 0, Ingredient.of(ItemInit.GOLDEN_HIND.get()));
 
     private final int level;
     private final int uses;
