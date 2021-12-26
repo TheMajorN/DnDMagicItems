@@ -41,7 +41,6 @@ public class SlipRazorEvents extends EntityTeleportEvent {
 
     public static EntityTeleportEvent onSlipRazorLand(ServerPlayerEntity entity, double targetX, double targetY, double targetZ, SlipRazorEntity slipRazor, float attackDamage) {
         SlipRazorEvents event = new SlipRazorEvents(entity, targetX, targetY, targetZ, slipRazor, attackDamage);
-        //event.setAttackDamage(onOldEnderTeleport(entity, attackDamage, event)); //TODO Forge: Remove this line in 1.17
         MinecraftForge.EVENT_BUS.post(event);
         return event;
     }
